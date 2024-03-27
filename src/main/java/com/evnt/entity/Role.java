@@ -21,7 +21,7 @@ public class Role {
 	@GeneratedValue(strategy= GenerationType.AUTO,generator="native")
 	private int id;
 	private String name;
-	
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "roles")
 	List<Authority> authorities;

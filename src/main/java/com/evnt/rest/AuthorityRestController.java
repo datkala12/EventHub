@@ -37,18 +37,18 @@ public class AuthorityRestController {
 	public List<Authority> getOneByRole(@RequestParam("username")String username){
 		return authorityService.getOneByRole(username);
 	}
-	
-	
+
+
 	@PostMapping("authorities")
 	public Authority post(@RequestBody Authority auth) {
 		return authorityService.create(auth);
 	}
-	
+
 	@DeleteMapping("authorities/{id}")
 	public void delete(@PathVariable("id") Integer id) {
 		authorityService.delete(id);
 	}
-	
+
 	@DeleteMapping("authoritiesOne/{username}")
 	public void deleteByUsername(@PathVariable("username") String username) {
 		System.out.println("username del: "+username);

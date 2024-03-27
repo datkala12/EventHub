@@ -35,12 +35,12 @@ public class AccountRestController {
 		}
 		return accountService.findAll();
 	}
-	
+
 	 @PostMapping("/login")
 	    public ResponseEntity<String> login(@RequestBody Map<String, String> loginRequest) {
 	        String username = loginRequest.get("username");
 	        String password = loginRequest.get("password");
-	        
+
 	        Account account = accountService.findById(username);
 	        if (account != null && account.getPassword().equals(password)) {
 	            return ResponseEntity.ok("Login successful");
@@ -48,12 +48,12 @@ public class AccountRestController {
 	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
 	        }
 	    }
-	 
+
 	@PostMapping("accountsManage")
 	public Account create(@RequestBody Account account) {
 		return accountService.create(account);
 	}
-	
+
 	@PutMapping("accounts/{id}")
 	public Account update(@RequestBody Account account,@PathVariable("id")String username) {
 		return accountService.update(account);

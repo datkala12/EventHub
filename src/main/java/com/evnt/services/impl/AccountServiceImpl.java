@@ -40,7 +40,7 @@ public class AccountServiceImpl implements AccountService {
 	public Account update(Account account) {
 		return accrepo.save(account);
 	}
-	
+
 	@Override
 	public Long getTotalAccount() {
 		return accrepo.count();

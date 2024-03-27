@@ -13,7 +13,7 @@ public interface AuthorityService {
 	public Authority create(Authority auth);
 
 	public void delete(Integer id);
-	
+
 	List<Authority> getOneByRole(String username);
 
 	void deleteByUsername(String username);

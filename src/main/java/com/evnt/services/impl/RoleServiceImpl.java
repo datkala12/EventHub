@@ -14,7 +14,8 @@ import com.evnt.services.RoleService;
 public class RoleServiceImpl implements RoleService {
 	@Autowired
 	RoleRepo rrepo;
-	
+
+	@Override
 	public List<Role> findAll() {
 		return rrepo.findAll();
 	}

@@ -20,7 +20,7 @@ import lombok.Data;
 @Table(name = "product")
 public class Product {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -33,11 +33,11 @@ public class Product {
 	private String accUser;
 	private String accPass;
 	private String dateCreate;
-	
+
 	@ManyToOne
     @JoinColumn(name = "cate_id")
     private Category categories;
-	
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "product")
 	List<OrderDetail> orderDetails;

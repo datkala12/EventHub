@@ -31,11 +31,11 @@ public class Order {
 	@Temporal(TemporalType.DATE)
 	@Column(name = "createDate")
 	Date createDate = new Date();
-	
+
     @ManyToOne
     @JoinColumn(name = "acc_user")
     Account account;
-    
+
     @JsonIgnore
 	@OneToMany(mappedBy = "order")
 	List<OrderDetail> orderDetails;

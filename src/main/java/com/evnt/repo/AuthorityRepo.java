@@ -15,10 +15,10 @@ import com.evnt.entity.Authority;
 public interface AuthorityRepo extends JpaRepository<Authority, Integer>{
 	@Query("SELECT DISTINCT a FROM authority a WHERE a.accounts IN ?1")
 	List<Authority> authoritiesOf(List<Account> accounts);
-	
+
 	@Query("Select a From Authority a where a.account.username like ?1")
 	List<Authority> getOneByRole(String username);
-	
+
 	@Transactional
 	@Modifying
 	@Query("Delete from Authority where Username = ?1")

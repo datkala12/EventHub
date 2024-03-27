@@ -15,7 +15,7 @@ import com.evnt.services.AuthorityService;
 public class AuthorityServiceImpl implements AuthorityService {
 	@Autowired
 	AuthorityRepo arepo;
-	
+
 	@Autowired
 	AccountRepo acrepo;
 
@@ -39,7 +39,7 @@ public class AuthorityServiceImpl implements AuthorityService {
 	public void delete(Integer id) {
 		arepo.deleteById(id);
 	}
-	
+
 	@Override
 	public List<Authority> getOneByRole(String username) {
 		return arepo.getOneByRole(username);

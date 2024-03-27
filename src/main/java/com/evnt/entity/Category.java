@@ -19,12 +19,12 @@ import lombok.Data;
 @Entity
 @Table(name = "categories")
 public class Category implements Serializable {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "categories")
 	private List<Product> product;
